@@ -1,4 +1,4 @@
-# demo-py-imagereview
+# py-imagereview
 
 A Python and Tkinter-based image review desktop app for triaging a folder of images.
 
@@ -6,24 +6,24 @@ A Python and Tkinter-based image review desktop app for triaging a folder of ima
 
 ## Roadmap
 
-- [x] Basic UI with image display and buttons
-- [x] Load images from a selected folder
-- [x] Mark images as keep or discard
-- [x] Keyboard shortcuts for marking and navigation
-- [x] Jump to next unmarked image
-- [x] Undo last action
-- [x] Commit discards by moving files to a `DISCARDED` folder
-- [x] Reset all marks without modifying files
-- [ ] Improve packaging (make installable with pip, GitHub repo, etc.)
 - [ ] Add testing to cover core functionality
 - [ ] Support nested folders (ignore `DISCARDED` subfolders)
 - [ ] Support more image formats (e.g. GIF, BMP)
-- [ ] Polish README with installation instructions
 
-## Run
+## Install and Run
 
 ```bash
-uv run main.py
+# Option 1: Clone and run with UV:
+git clone https://github.com/m-spangenberg/py-imagereview.git
+cd py-imagereview
+uv sync && uv run py-imagereview
+
+# Option 2: Pull it from GitHub with just pip:
+pip install git+https://github.com/m-spangenberg/py-imagereview.git
+py-imagereview
+
+# Option 3:same thing as 2 but with UV:
+uv pip install git+https://github.com/m-spangenberg/py-imagereview.git
 ```
 
 ## Features
