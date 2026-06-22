@@ -3,17 +3,6 @@ revision = 3
 requires-python = ">=3.14.5"
 
 [[package]]
-name = "demo-py-imagereview"
-version = "0.1.0"
-source = { virtual = "." }
-dependencies = [
-    { name = "pillow" },
-]
-
-[package.metadata]
-requires-dist = [{ name = "pillow", specifier = ">=12.2.0" }]
-
-[[package]]
 name = "pillow"
 version = "12.2.0"
 source = { registry = "https://pypi.org/simple" }
@@ -45,3 +34,14 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/ba/13/306d275efd3a3453f72114b7431c877d10b1154014c1ebbedd067770d629/pillow-12.2.0-cp314-cp314t-win_amd64.whl", hash = "sha256:6562ace0d3fb5f20ed7290f1f929cae41b25ae29528f2af1722966a0a02e2aa1", size = 7225152, upload-time = "2026-04-01T14:45:50.032Z" },
     { url = "https://files.pythonhosted.org/packages/ff/6e/cf826fae916b8658848d7b9f38d88da6396895c676e8086fc0988073aaf8/pillow-12.2.0-cp314-cp314t-win_arm64.whl", hash = "sha256:aa88ccfe4e32d362816319ed727a004423aab09c5cea43c01a4b435643fa34eb", size = 2556579, upload-time = "2026-04-01T14:45:52.529Z" },
 ]
+
+[[package]]
+name = "py-imagereview"
+version = "0.1.5"
+source = { editable = "." }
+dependencies = [
+    { name = "pillow" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "pillow", specifier = ">=12.2.0" }]
