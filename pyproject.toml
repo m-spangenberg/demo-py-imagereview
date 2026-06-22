@@ -1,9 +1,24 @@
 [project]
-name = "demo-py-imagereview"
-version = "0.1.0"
+name = "py-imagereview"
+version = "0.1.5"
 description = "Desktop app for reviewing images."
+authors = [
+    { name = "Marthinus Spangenberg", email = "mspangenberg.dev@gmail.com" }
+]
 readme = "README.md"
 requires-python = ">=3.14.5"
 dependencies = [
     "pillow>=12.2.0",
 ]
+
+[project.scripts]
+py-imagereview = "py_imagereview.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/py_imagereview"]
+Homepage = "https://github.com/m-spangenberg/py-imagereview"
+Issues = "https://github.com/m-spangenberg/py-imagereview/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
