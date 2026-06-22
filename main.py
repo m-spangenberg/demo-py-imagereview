@@ -169,9 +169,9 @@ class ImageReviewApp:
 
         title_block = ttk.Frame(title_row)
         title_block.grid(row=0, column=0, sticky="w")
-        ttk.Label(title_block, text="Image Review", style="HeaderTitle.TLabel").grid(
-            row=0, column=0, sticky="w"
-        )
+        # ttk.Label(title_block, text="Image Review", style="HeaderTitle.TLabel").grid(
+        #     row=0, column=0, sticky="w"
+        # )
         ttk.Label(
             title_block, textvariable=self.folder_var, style="HeaderMeta.TLabel"
         ).grid(row=1, column=0, sticky="w")
