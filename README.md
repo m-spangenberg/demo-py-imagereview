@@ -4,7 +4,7 @@ A Python and Tkinter-based image review desktop app for triaging a folder of ima
 
 ![demo](media/screenshot.png)
 
-## Todo
+## Roadmap
 
 - [x] Basic UI with image display and buttons
 - [x] Load images from a selected folder
