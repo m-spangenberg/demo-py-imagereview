@@ -20,7 +20,7 @@ uv sync && uv run py-imagereview
 
 # Option 2: Pull it from GitHub with just pip:
 pip install git+https://github.com/m-spangenberg/py-imagereview.git
-py-imagereview
+python -m py-imagereview
 
 # Option 3:same thing as 2 but with UV:
 uv pip install git+https://github.com/m-spangenberg/py-imagereview.git
