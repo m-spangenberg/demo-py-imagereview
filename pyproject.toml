@@ -1,0 +1,9 @@
+[project]
+name = "demo-py-imagereview"
+version = "0.1.0"
+description = "Desktop app for reviewing images."
+readme = "README.md"
+requires-python = ">=3.14.5"
+dependencies = [
+    "pillow>=12.2.0",
+]
