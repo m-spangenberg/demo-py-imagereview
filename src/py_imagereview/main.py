@@ -11,7 +11,7 @@ from tkinter import filedialog, messagebox, ttk
 from typing import Any
 
 try:
-    from PIL import Image, ImageOps
+    from PIL import Image, ImageOps, UnidentifiedImageError
 
     ImageTk = importlib.import_module("PIL.ImageTk")
 except ImportError:
@@ -21,7 +21,8 @@ except ImportError:
 
 VERSION = "0.1.5"  # TODO: Need to automate this from git tags or something
 
-SUPPORTED_SUFFIXES = {".jpg", ".jpeg", ".png", ".tif", ".tiff"}
+SUPPORTED_SUFFIXES: set[str] = set()
+
 DECISION_LABELS = {
     "unmarked": ("UNMARKED", "#6b7280"),
     "keep": ("KEEP", "#0f9d58"),
@@ -71,6 +72,23 @@ class ImageReviewApp:
         self._bind_keys()
         self.root.protocol("WM_DELETE_WINDOW", self._handle_exit)
         self._update_ui_state()
+        self._set_supported_suffixes()
+
+    def _set_supported_suffixes(self) -> None:
+        """
+        Dynamically determine the supported image file suffixes based on the available PIL image formats.
+        This method initializes the SUPPORTED_SUFFIXES global variable with a set of lowercase file extensions.
+        """
+        global SUPPORTED_SUFFIXES
+        Image.init()
+        SUPPORTED_SUFFIXES = {f"{ext.lower()}" for ext in Image.EXTENSION.keys()}
+
+        if not SUPPORTED_SUFFIXES:
+            messagebox.showerror(
+                "No supported image formats",
+                "Pillow is installed but no supported image formats were found.",
+            )
+            self.root.quit()
 
     def _configure_style(self) -> None:
         style = ttk.Style()
