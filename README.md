@@ -8,7 +8,6 @@ A Python and Tkinter-based image review desktop app for triaging a folder of ima
 
 - [ ] Add testing to cover core functionality
 - [ ] Support nested folders (ignore `DISCARDED` subfolders)
-- [ ] Support more image formats (e.g. GIF, BMP)
 
 ## Install and Run
 
